@@ -1,3 +1,11 @@
+/*
+ * @Author: mikey.zhaopeng 
+ * @Date: 2019-01-01 15:35:47 
+ * @Last Modified by: bigkizd(Toan Dao Minh)
+ * @Last Modified time: 2019-01-01 22:40:06
+ */
+
+
 import numpy as np
 
 class BaseEstimator(object):
