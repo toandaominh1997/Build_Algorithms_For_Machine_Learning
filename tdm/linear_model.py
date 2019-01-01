@@ -1,5 +1,6 @@
-
-from tdm.base import BaseEstimator
+import autograd.numpy as np
+from autograd import grad
+from tdm.base.base import BaseEstimator
 from tdm.metrics.metrics import mean_squared_error 
 class BaseRegression(BaseEstimator):
     def __init__(self, lr=0.01, penatly='None', C=0.01, tolerance=0.0001, max_iters=1000):
@@ -58,7 +59,7 @@ class BaseRegression(BaseEstimator):
 class LinearRegression(BaseRegression):
     def loss(self, w):
         loss = self.cost_func(self.y, np.dot(self.X, w))
-        return self._add_penalty(loss)
+        return self._add_penalty(loss, w)
     def init_cost(self):
         self.cost_func = mean_squared_error
     
